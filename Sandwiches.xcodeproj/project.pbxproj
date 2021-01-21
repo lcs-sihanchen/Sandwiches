@@ -11,6 +11,8 @@
 		9C221D3825B900D3003B8C23 /* Sandwich.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C221D3525B900D2003B8C23 /* Sandwich.swift */; };
 		9C221D3925B900D3003B8C23 /* Sandwiches.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9C221D3625B900D2003B8C23 /* Sandwiches.xcassets */; };
 		9C221D3A25B900D4003B8C23 /* Sandwiches.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9C221D3625B900D2003B8C23 /* Sandwiches.xcassets */; };
+		9C221D3E25B93FEC003B8C23 /* SandwichDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C221D3D25B93FEC003B8C23 /* SandwichDetail.swift */; };
+		9C221D3F25B93FEC003B8C23 /* SandwichDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C221D3D25B93FEC003B8C23 /* SandwichDetail.swift */; };
 		9CE02FFE25B87DF20059E5D2 /* SandwichesApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CE02FEB25B87DED0059E5D2 /* SandwichesApp.swift */; };
 		9CE02FFF25B87DF20059E5D2 /* SandwichesApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CE02FEB25B87DED0059E5D2 /* SandwichesApp.swift */; };
 		9CE0300025B87DF20059E5D2 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CE02FEC25B87DED0059E5D2 /* ContentView.swift */; };
@@ -22,6 +24,7 @@
 /* Begin PBXFileReference section */
 		9C221D3525B900D2003B8C23 /* Sandwich.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Sandwich.swift; sourceTree = "<group>"; };
 		9C221D3625B900D2003B8C23 /* Sandwiches.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Sandwiches.xcassets; sourceTree = "<group>"; };
+		9C221D3D25B93FEC003B8C23 /* SandwichDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SandwichDetail.swift; sourceTree = "<group>"; };
 		9CE02FEB25B87DED0059E5D2 /* SandwichesApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SandwichesApp.swift; sourceTree = "<group>"; };
 		9CE02FEC25B87DED0059E5D2 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		9CE02FED25B87DF20059E5D2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -65,6 +68,7 @@
 			children = (
 				9CE02FEB25B87DED0059E5D2 /* SandwichesApp.swift */,
 				9CE02FEC25B87DED0059E5D2 /* ContentView.swift */,
+				9C221D3D25B93FEC003B8C23 /* SandwichDetail.swift */,
 				9C221D3525B900D2003B8C23 /* Sandwich.swift */,
 				9C221D3625B900D2003B8C23 /* Sandwiches.xcassets */,
 				9CE02FED25B87DF20059E5D2 /* Assets.xcassets */,
@@ -200,6 +204,7 @@
 				9CE0300025B87DF20059E5D2 /* ContentView.swift in Sources */,
 				9CE02FFE25B87DF20059E5D2 /* SandwichesApp.swift in Sources */,
 				9C221D3725B900D3003B8C23 /* Sandwich.swift in Sources */,
+				9C221D3E25B93FEC003B8C23 /* SandwichDetail.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -210,6 +215,7 @@
 				9CE0300125B87DF20059E5D2 /* ContentView.swift in Sources */,
 				9CE02FFF25B87DF20059E5D2 /* SandwichesApp.swift in Sources */,
 				9C221D3825B900D3003B8C23 /* Sandwich.swift in Sources */,
+				9C221D3F25B93FEC003B8C23 /* SandwichDetail.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
