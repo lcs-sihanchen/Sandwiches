@@ -8,21 +8,23 @@
 import SwiftUI
 
 struct ContentView: View {
-    var sandwiches:[Sandwich] = []
-    
+   @ObservedObject var store: SandwichStore
+ 
     var body: some View {
         NavigationView {
             
             List {
-                ForEach(sandwiches) { sandwich in
+                ForEach(store.sandwiches) { sandwich in
                     
                     SandwichCell(sandwich: sandwich)
                 }
-                
+                // Move the sandwich here
+                .onMove(perform: moveSandwich)
+                .onDelete(perform: deleteSandwiches)
                 
                 HStack{
                     Spacer()
-                    Text("\(sandwiches.count) Sandwiches")
+                    Text("\(store.sandwiches.count) Sandwiches")
                         .foregroundColor(.secondary)
                     Spacer()
                 }
@@ -32,16 +34,42 @@ struct ContentView: View {
                 
             }
             .navigationTitle("Sandwiches")
+            // For Ipad use only
+            Text("Select a sandwich")
+                .font(.largeTitle)
         }
         
         
         
     }
+    
+    
+    
+    
+    func moveSandwich(){
+        withAnimation {
+            store.sandwiches.append(Sandwich( name: "Patty melt", ingredientCount: 3, isSpicy: false))
+        }
+    }
+    
+    func makeSandwich(from: IndexSet, to: Int){
+        withAnimation {
+            store.sandwiches.move(fromOffsets: from, toOffset: to)
+        }
+    }
+    
+    func deleteSandwiches(offsets: IndexSet) {
+        withAnimation {
+            store.sandwiches.remove(atOffsets: offsets)
+        }
+    }
 }
+
+
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView(sandwiches:testData)
+        ContentView(store: testStore)
     }
 }
 

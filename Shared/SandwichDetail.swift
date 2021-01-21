@@ -29,7 +29,7 @@ struct SandwichDetail: View {
                     }
                 }
             Spacer(minLength: /*@START_MENU_TOKEN@*/0/*@END_MENU_TOKEN@*/)
-            if sandwich.isSpicy {
+            if sandwich.isSpicy && !zoomed {
                 HStack {
                     Spacer()
                     Label("Spicy", systemImage: "flame.fill")
@@ -39,6 +39,7 @@ struct SandwichDetail: View {
                 .font(Font.headline.smallCaps())
                 .background(Color.red)
                 .foregroundColor(.yellow)
+                .transition(.move(edge: .bottom))
                    
             }
             }
