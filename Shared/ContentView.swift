@@ -14,9 +14,10 @@ struct ContentView: View {
         NavigationView {
             
             List {
+                // Each sandwich is stored with an ID
                 ForEach(store.sandwiches) { sandwich in
                     
-                    SandwichCell(sandwich: sandwich)
+                    SandwichCell(sandwich: sandwich )
                 }
                 // Move the sandwich here
                 .onMove(perform: moveSandwich)
@@ -34,6 +35,20 @@ struct ContentView: View {
                 
             }
             .navigationTitle("Sandwiches")
+            .toolbar(content: {
+                ToolbarItem(placement: .navigationBarTrailing) {
+                    #if os(iOS)
+                    EditButton()
+                    #endif
+                }
+               
+                ToolbarItem(placement: .navigationBarLeading){
+                    Button("Add", action: makeSandwich)
+                }
+               
+            })
+                
+            
             // For Ipad use only
             Text("Select a sandwich")
                 .font(.largeTitle)
@@ -46,13 +61,13 @@ struct ContentView: View {
     
     
     
-    func moveSandwich(){
+    func makeSandwich(){
         withAnimation {
-            store.sandwiches.append(Sandwich( name: "Patty melt", ingredientCount: 3, isSpicy: false))
+            store.sandwiches.append(Sandwich(name: "Patty melt", ingredientCount: 3))
         }
     }
     
-    func makeSandwich(from: IndexSet, to: Int){
+    func moveSandwich(from: IndexSet, to: Int){
         withAnimation {
             store.sandwiches.move(fromOffsets: from, toOffset: to)
         }
@@ -69,7 +84,12 @@ struct ContentView: View {
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView(store: testStore)
+        Group {
+            ContentView(store: testStore)
+            ContentView(store: testStore)
+                .preferredColorScheme(.dark)
+                .environment(\.sizeCategory, .extraExtraExtraLarge)
+        }
     }
 }
 
