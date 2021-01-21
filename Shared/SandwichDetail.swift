@@ -7,16 +7,35 @@
 
 import SwiftUI
 
+
+
 struct SandwichDetail: View {
     
-    var sandwich: Sandwich
+    let sandwich: Sandwich
+    // Only shared in this view
+    
+    @State private var zoomed = false
     var body: some View {
         Image(sandwich.imageName)
             .resizable()
-            .aspectRatio(contentMode: .fit)
+            // If zoomed = false, .fit, and vice versa
+            .aspectRatio(contentMode: zoomed ? .fill : .fit)
+            .onTapGesture {
+                // Animate between different state
+                withAnimation {
+                    zoomed.toggle()
+                }
+                
+            }
             .navigationTitle(sandwich.name)
+            // Fill the whole screen
+            .edgesIgnoringSafeArea(.bottom)
     }
 }
+
+
+
+
 
 struct SandwichDetail_Previews: PreviewProvider {
     static var previews: some View {
