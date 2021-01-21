@@ -12,9 +12,45 @@ struct ContentView: View {
     
     var body: some View {
         NavigationView {
-        
-        List(sandwiches) { sandwich in
             
+            List {
+                ForEach(sandwiches) { sandwich in
+                    
+                    SandwichCell(sandwich: sandwich)
+                }
+                
+                
+                HStack{
+                    Spacer()
+                    Text("\(sandwiches.count) Sandwiches")
+                        .foregroundColor(.secondary)
+                    Spacer()
+                }
+                
+                
+                
+                
+            }
+            .navigationTitle("Sandwiches")
+        }
+        
+        
+        
+    }
+}
+
+struct ContentView_Previews: PreviewProvider {
+    static var previews: some View {
+        ContentView(sandwiches:testData)
+    }
+}
+
+struct SandwichCell: View {
+    var sandwich: Sandwich
+    var body: some View {
+        NavigationLink(
+            destination: Text(sandwich.name)
+        ){
             Image(sandwich.thumbnailName)
                 .cornerRadius(8)
             
@@ -26,16 +62,5 @@ struct ContentView: View {
                     .foregroundColor(.secondary)
             }
         }
-        .navigationTitle("Sandwiches")
-        }
-        
-        
-        
-    }
-}
-
-struct ContentView_Previews: PreviewProvider {
-    static var previews: some View {
-        ContentView(sandwiches:testData)
     }
 }
